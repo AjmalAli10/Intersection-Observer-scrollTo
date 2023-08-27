@@ -17,7 +17,6 @@ export default function App() {
           onClick={() => {
             window.scroll({
               top: 0,
-              left: 0,
               behavior: 'smooth',
             });
           }}
