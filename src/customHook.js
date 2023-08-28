@@ -1,16 +1,14 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const useTextInView = (ref) => {
   const [isIntersect, setIsIntersect] = useState(false);
-  const callBackFun = useMemo(
-    () => (entries) => {
-      entries.forEach((entry) => {
-        setIsIntersect(!entry.isIntersecting);
-      });
-    },
-    []
-  );
-  const observer = new IntersectionObserver(callBackFun);
+  const callBackEntry = (entries) => {
+    entries.forEach((entry) => {
+      setIsIntersect(!entry.isIntersecting);
+    });
+  };
+  const observer = new IntersectionObserver(callBackEntry);
+
   useEffect(() => {
     if (ref.current) {
       observer.observe(ref.current);
