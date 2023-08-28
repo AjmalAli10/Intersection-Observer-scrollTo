@@ -11,7 +11,7 @@ export default function App() {
       <p>
         How we can create a seamless ascent from the bottom to the top smoothly?
       </p>
-      <p>{data.ipsumText}</p>
+      <p className='ipsum-text'>{data.ipsumText}</p>
       {isIntersecting && (
         <div
           onClick={() => {
